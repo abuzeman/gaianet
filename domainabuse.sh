@@ -68,6 +68,7 @@ else
     echo "Библиотека Faker уже установлена"
 fi
 
+
 # Создание Python скрипта
 echo "Создаём Python скрипт..."
 cat << EOF > $PYTHON_SCRIPT_NAME
@@ -196,15 +197,4 @@ while True:
     time.sleep(1)
 
 EOF
-
-# Запуск Faker скриптов общения
-for COUNT in {1..$FAKER_SESSION_LIMIT}
-do
-    SESSION="session$COUNT"
-    screen -dmS $SESSION bash -c "python3 $PYTHON_SCRIPT_NAME"
-  #sleep $((RANDOM % (180 - 20 + 1) + 20))  # Пауза между запусками (опционально)
-    sleep 3
-done
-
 echo "Python скрипт создан. Запускать можно командой: python3 $PYTHON_SCRIPT_NAME"
-echo "Faker скрипты в количестве $FAKER_SESSION_LIMIT запущены в сессиях"
