@@ -210,4 +210,4 @@ while [ "$COUNT" -le "$FAKER_SESSION_LIMIT" ]; do
 done
 
 echo "Python скрипт создан. Запускать можно командой: python3 $PYTHON_SCRIPT_NAME"
-echo "Faker скрипты в количестве $FAKER_SESSION_LIMIT запущены в сессиях"
+echo "Faker скрипты в количестве $FAKER_SESSION_LIMIT запущены в отдельных сессиях"
