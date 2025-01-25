@@ -197,4 +197,16 @@ while True:
     time.sleep(1)
 
 EOF
+
+# Запуск Faker скриптов общения
+COUNT=1
+while [ "$COUNT" -le "$FAKER_SESSION_LIMIT" ]; do
+    SESSION="session$COUNT"
+    screen -dmS "$SESSION" bash -c "python3 $PYTHON_SCRIPT_NAME"
+    # Пауза между запусками (опционально)
+    sleep 3
+    COUNT=$((COUNT + 1))
+done
+
 echo "Python скрипт создан. Запускать можно командой: python3 $PYTHON_SCRIPT_NAME"
+echo "Faker скрипты в количестве $FAKER_SESSION_LIMIT запущены в сессиях"
