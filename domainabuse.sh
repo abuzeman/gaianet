@@ -201,7 +201,7 @@ EOF
 # Запуск Faker скриптов общения
 COUNT=1
 while [ "$COUNT" -le "$FAKER_SESSION_LIMIT" ]; do
-    SESSION="session$COUNT"
+    SESSION="gaiasession$COUNT"
     echo "Запускаем Faker сессию с номером $COUNT"
     screen -dmS "$SESSION" bash -c "python3 $PYTHON_SCRIPT_NAME"
     # Пауза между запусками (опционально)
